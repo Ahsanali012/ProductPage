@@ -6,15 +6,23 @@ import {
   CardHeader,
   
 } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 import CardActionArea from "@mui/material/CardActionArea/CardActionArea";
 
 import { FaCartArrowDown } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
+
+  
+  
   return (
     <Card sx={{ maxWidth: 280 }}>
-      <CardActionArea>
+      <CardActionArea 
+      
+      LinkComponent={Link}
+      to={`/productDetails/${product._id}`}
+      >
      
         <CardHeader
           action={
@@ -24,13 +32,7 @@ const ProductCard = ({ product }) => {
           }
         />
 
-        <CardMedia
-          sx={{
-            height: 144,
-            backgroundSize: "contain",
-          }}
-          image={product.PictureUrl}
-        />
+       
         <CardContent>
           <Typography
             sx={{ fontSize: 15, fontWeight: "bold" }}
@@ -38,7 +40,7 @@ const ProductCard = ({ product }) => {
             variant="h5"
             color="common.black"
           >
-            {product.Description}
+            {product.engData.title}
           </Typography>
           <Typography
             variant="caption"
@@ -46,7 +48,7 @@ const ProductCard = ({ product }) => {
             display="block"
             gutterBottom
           >
-            {product.ShortDescription}
+            {product.engData.description}
           </Typography>
           <Typography
             sx={{ fontWeight: "bold", fontSize: 20 }}

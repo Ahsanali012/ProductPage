@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Products from './pages/Products/Products';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Layout from './components/layout/layout';
+import ProductDetails from './pages/Products/ProductDetails';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
         <Route path ='/' element={<Home/>} />
         <Route path ='/products' element={<Products/>} />
+        <Route path ='/productDetails/:id' element={<ProductDetails/>} />
         {/* <Route path ='*' element={<ErrorPage/>} /> */}
         </Routes>
         
